@@ -3,15 +3,15 @@
 <table>
 	<thead>
 		<tr>
-			<th>步驟&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<br></th>
-				<th>Kotlin&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<br></th>
-				<th>ReactNative&nbsp;</th>
-				<th>Network&nbsp;</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>初始化&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
+			<th>步驟<br></th>
+			<th>Kotlin<br></th>
+			<th>ReactNative</th>
+			<th>Network</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>初始化&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</td>
 				<td>MainActivity<br>以singleton初始化MainPresenter<br>MainActivity<br>&nbsp; &nbsp; onCreate<br>&nbsp; &nbsp; &nbsp; &nbsp; with(presenter)
 {
 <br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; connect()<br>&nbsp; &nbsp; &nbsp; &nbsp; }<br>確認db有無連線過的資訊&nbsp;</td>
@@ -186,7 +186,7 @@ user.avatarETag<br><br>};<br></td>
 			<tr>
 				<td><span style="font-style: normal; font-weight: 400;">進房間後的socket⾏為</span><br></td>
 				<td><span style="font-style: normal; font-weight: 400;">ChatRoomFragment</span><br><span style="font-style: normal; font-weight: 400;">建立socket連線, 訂閱房間更新訊息</span><br><span style="font-style: normal; font-weight: 400;">presenter.setupChatRoom</span><br><br><span style="font-style: normal; font-weight: 400;">有新訊息進來就更新</span><br><span style="font-style: normal; font-weight: 400;">subscribeRoomMessages -&gt;</span><br><span style="font-style: normal; font-weight: 400;">&nbsp; &nbsp; client.subscribeRoomMessages -&gt;</span><br><span style="font-style: normal; font-weight: 400;">&nbsp; &nbsp; &nbsp; &nbsp; updateMessage(message)</span><br><br><span style="font-style: normal; font-weight: 400;">subscribeTypingStatus</span><br><span style="font-style: normal; font-weight: 400;">subscribeConnectionState</span><br></td>
-				<td>RoomView<br><span style="font-style: normal; font-weight: 400;">this.sub?.subscribe?.();</span><br><span style="font-style: normal; font-weight: 400;">訂閱</span><br><span style="font-style: normal; font-weight: 400;">this.promises = sdk.subscribeRoom(this.rid);</span><br><br><span style="font-style: normal; font-weight: 400;">this.connectedLi stener = sdk.onStreamData('connected',</span><span style="font-style: normal; font-weight: 400;">this.handleConnection);</span><br><br><span style="font-style: normal; font-weight: 400;">this.disconnectedListener = sdk.onStreamData('close',</span><span style="font-style: normal; font-weight: 400;">this.handleConnection);</span><br><br><span style="font-style: normal; font-weight: 400;">this.notifyRoomListener = sdk.onStreamData('streamnotify-room',</span><span style="font-style: normal; font-weight: 400;">this.handleNotifyRoomReceived );</span><br><br><span style="font-style: normal; font-weight: 400;">this.messageReceivedListener = sdk.onStreamData('streamroommessages',&nbsp;</span><span style="font-style: normal; font-weight: 400;">this.handleMessageReceived);</span><br></td>
+				<td>RoomView<br><span style="font-style: normal; font-weight: 400;">this.sub?.subscribe?.();</span><br><span style="font-style: normal; font-weight: 400;">訂閱</span><br><span style="font-style: normal; font-weight: 400;">this.promises = sdk.subscribeRoom(this.rid);</span><br><br><span style="font-style: normal; font-weight: 400;">this.connectedLi stener = sdk.onStreamData('connected',</span><span style="font-style: normal; font-weight: 400;">this.handleConnection);</span><br><br><span style="font-style: normal; font-weight: 400;">this.disconnectedListener = sdk.onStreamData('close',</span><span style="font-style: normal; font-weight: 400;">this.handleConnection);</span><br><br><span style="font-style: normal; font-weight: 400;">this.notifyRoomListener = sdk.onStreamData('streamnotify-room',</span><span style="font-style: normal; font-weight: 400;">this.handleNotifyRoomReceived );</span><br><br><span style="font-style: normal; font-weight: 400;">this.messageReceivedListener = sdk.onStreamData('streamroommessages',<br></span><span style="font-style: normal; font-weight: 400;">this.handleMessageReceived);</span><br></td>
 				<td><span style="font-style: normal; font-weight: 400;">Kotlin socket</span><br><span style="font-style: normal; font-weight: 400;">送訊息send(streamRoomMessages(id, roomId))</span><br><br><span style="font-style: normal; font-weight: 400;">訊息組成</span><br><span style="font-style: normal; font-weight: 400;">newSubscriptionMessage("stream-roommessages", id, "\"$roomId\", false")</span><br><br><span style="font-style: normal; font-weight: 400;">訂閱之後收到的訊息會透過下⾯配發 Socket.processSubscriptionsChanged</span><br><br><span style="font-style: normal; font-weight: 400;">處理房間內的對話訊息</span><br><span style="font-style: normal; font-weight: 400;">processRoomMessage</span><br><span style="font-style: normal; font-weight: 400;">再送去給sdk</span><br><span style="font-style: normal; font-weight: 400;">messagesChannel.send(message)</span><br><br><span style="font-style: normal; font-weight: 400;">ReactNative ‘stream-roommessages’</span><br></td>
 			</tr>
 			<tr>
