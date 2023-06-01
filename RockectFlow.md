@@ -20,7 +20,7 @@ takeLatest(APP.INIT, restore);<br>確認UserPreferences有無連線過的資訊<
 				<td>Kotlin<br>socket接起來會開⼀個while
 loop<br>在sdk client的onMessage
 <br>不停讀取送來的東⻄<br>收到訊息就塞db<br>
-					dbManager.processChatRoomsBatch(batch)<br><br>使⽤okhttp3.internal.
+					dbManager.processChatRoomsBatch(batch)<br>又UI observer至db,造成自動更新UI<br><br>使⽤okhttp3.internal.
 ws.RealWebSocket
 <br>(新版應該是要用Asteroid)<br><br>ReactNative是Asteroid
 DDP ?!connect</td>
