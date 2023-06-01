@@ -18,8 +18,8 @@
 				<td>index.js<br>在root做初始化<br><br>index.js-init.js<br>yield
 takeLatest(APP.INIT, restore);<br>確認UserPreferences有無連線過的資訊</td>
 				<td>Kotlin<br>socket接起來會開⼀個while
-loop<br>在connect的onResponse的
-loopReader()<br>不停讀取送來的東⻄<br><br>使⽤okhttp3.internal.
+loop<br>在sdk client的onMessage
+<br>不停讀取送來的東⻄<br><br>使⽤okhttp3.internal.
 ws.RealWebSocket
 <br>(新版應該是要用Asteroid)<br><br>ReactNative是Asteroid
 DDP ?!connect</td>
